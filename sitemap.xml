@@ -37,10 +37,16 @@
     <loc>https://preview.carpentries.org/image-processing/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://preview.carpentries.org/image-processing/aio.html</loc>
+  </url>
+  <url>
     <loc>https://preview.carpentries.org/image-processing/discuss.html</loc>
   </url>
   <url>
     <loc>https://preview.carpentries.org/image-processing/edge-detection.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/image-processing/images.html</loc>
   </url>
   <url>
     <loc>https://preview.carpentries.org/image-processing/index.html</loc>
@@ -82,13 +88,25 @@
     <loc>https://preview.carpentries.org/image-processing/instructor/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://preview.carpentries.org/image-processing/instructor/aio.html</loc>
+  </url>
+  <url>
     <loc>https://preview.carpentries.org/image-processing/instructor/discuss.html</loc>
   </url>
   <url>
     <loc>https://preview.carpentries.org/image-processing/instructor/edge-detection.html</loc>
   </url>
   <url>
+    <loc>https://preview.carpentries.org/image-processing/instructor/images.html</loc>
+  </url>
+  <url>
     <loc>https://preview.carpentries.org/image-processing/instructor/index.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/image-processing/instructor/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/image-processing/instructor/key-points.html</loc>
   </url>
   <url>
     <loc>https://preview.carpentries.org/image-processing/instructor/prereqs.html</loc>
@@ -98,6 +116,12 @@
   </url>
   <url>
     <loc>https://preview.carpentries.org/image-processing/instructor/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/image-processing/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/image-processing/key-points.html</loc>
   </url>
   <url>
     <loc>https://preview.carpentries.org/image-processing/prereqs.html</loc>
