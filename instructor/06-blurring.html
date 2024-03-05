@@ -353,13 +353,12 @@ to average out rapid changes in pixel intensity. A blur is a very common
 operation we need to perform before other tasks such as <a href="07-thresholding.html">thresholding</a>. There are several
 different blurring functions in the <code>skimage.filters</code> module,
 so we will focus on just one here, the <em>Gaussian blur</em>.</p>
-<div id="filters" class="callout callout">
+<div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="filters" class="callout-inner">
-<h3 class="callout-title">Filters<a class="anchor" aria-label="anchor" href="#filters"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="filters">Filters<a class="anchor" aria-label="anchor" href="#filters"></a></h3>
 <div class="callout-content">
 <p>In the day-to-day, macroscopic world, we have physical filters which
 separate out objects by size. A filter with small holes allows only
@@ -375,13 +374,12 @@ are large - maybe a couple of big features per image.</p>
 </div>
 </div>
 </div>
-<div id="blurring" class="callout callout">
+<div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="blurring" class="callout-inner">
-<h3 class="callout-title">Blurring<a class="anchor" aria-label="anchor" href="#blurring"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="blurring">Blurring<a class="anchor" aria-label="anchor" href="#blurring"></a></h3>
 <div class="callout-content">
 <p>Blurring is to make something less clear or distinct. This could be
 interpreted quite broadly in the context of image analysis - anything
@@ -392,13 +390,12 @@ filter that makes use of a Gaussian kernel.</p>
 </div>
 </div>
 </div>
-<div id="kernels" class="callout callout">
+<div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="kernels" class="callout-inner">
-<h3 class="callout-title">Kernels<a class="anchor" aria-label="anchor" href="#kernels"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="kernels">Kernels<a class="anchor" aria-label="anchor" href="#kernels"></a></h3>
 <div class="callout-content">
 <p>A kernel can be used to implement a filter on an image. A kernel, in
 this context, is a small matrix which is combined with the image using a
@@ -478,13 +475,12 @@ kernel.</p>
 new value for the centre pixel (3, 3). The same process would be used to
 determine the green and red channel values, and then the kernel would be
 moved over to apply the filter to the next pixel in the image.</p>
-<div id="image-edges" class="callout callout">
+<div id="callout4" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="image-edges" class="callout-inner">
-<h3 class="callout-title">Image edges<a class="anchor" aria-label="anchor" href="#image-edges"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="image-edges">Image edges<a class="anchor" aria-label="anchor" href="#image-edges"></a></h3>
 <div class="callout-content">
 <p>Something different needs to happen for pixels near the outer limits
 of the image, since the kernel for the filter may be partially off the
@@ -554,32 +550,32 @@ Gaussian blur function.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ipympl</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> imageio.v3 <span class="im">as</span> iio</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> skimage</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> skimage.filters</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib widget</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="im">import</span> ipympl</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="im">import</span> imageio.v3 <span class="im">as</span> iio</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="im">import</span> skimage</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="im">import</span> skimage.filters</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="op">%</span>matplotlib widget</span></code></pre>
 </div>
 <p>Then, we load the image, and display it:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> iio.imread(uri<span class="op">=</span><span class="st">"data/gaussian-original.png"</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># display the image</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.imshow(image)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>image <span class="op">=</span> iio.imread(uri<span class="op">=</span><span class="st">"data/gaussian-original.png"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co"># display the image</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>plt.imshow(image)</span></code></pre>
 </div>
 <figure><img src="../data/gaussian-original.png" alt="Original image" class="figure mx-auto d-block"></figure><p>Next, we apply the gaussian blur:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sigma <span class="op">=</span> <span class="fl">3.0</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># apply Gaussian blur, creating a new image</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>blurred <span class="op">=</span> skimage.filters.gaussian(</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    image, sigma<span class="op">=</span>(sigma, sigma), truncate<span class="op">=</span><span class="fl">3.5</span>, channel_axis<span class="op">=-</span><span class="dv">1</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>sigma <span class="op">=</span> <span class="fl">3.0</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="co"># apply Gaussian blur, creating a new image</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>blurred <span class="op">=</span> skimage.filters.gaussian(</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>    image, sigma<span class="op">=</span>(sigma, sigma), truncate<span class="op">=</span><span class="fl">3.5</span>, channel_axis<span class="op">=-</span><span class="dv">1</span>)</span></code></pre>
 </div>
 <p>The first two arguments to <code>skimage.filters.gaussian()</code>
 are the image to blur, <code>image</code>, and a tuple defining the
@@ -604,7 +600,7 @@ position. In this case, the last dimension is the third dimension (index
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(image.ndim)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="bu">print</span>(image.ndim)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -615,9 +611,9 @@ position. In this case, the last dimension is the third dimension (index
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># display blurred image</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>plt.imshow(blurred)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="co"># display blurred image</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>plt.imshow(blurred)</span></code></pre>
 </div>
 <figure><img src="../fig/gaussian-blurred.png" alt="Original image" class="figure mx-auto d-block"></figure><div id="experimenting-with-sigma-values-10-min" class="callout challenge">
 <div class="callout-square">
@@ -682,14 +678,14 @@ in the cx direction.</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># apply Gaussian blur, with a sigma of 1.0 in the ry direction, and 6.0 in the cx direction</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>blurred <span class="op">=</span> skimage.filters.gaussian(</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    image, sigma<span class="op">=</span>(<span class="fl">1.0</span>, <span class="fl">6.0</span>), truncate<span class="op">=</span><span class="fl">3.5</span>, channel_axis<span class="op">=-</span><span class="dv">1</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># display blurred image</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>plt.imshow(blurred)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># apply Gaussian blur, with a sigma of 1.0 in the ry direction, and 6.0 in the cx direction</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>blurred <span class="op">=</span> skimage.filters.gaussian(</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>    image, sigma<span class="op">=</span>(<span class="fl">1.0</span>, <span class="fl">6.0</span>), truncate<span class="op">=</span><span class="fl">3.5</span>, channel_axis<span class="op">=-</span><span class="dv">1</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>)</span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co"># display blurred image</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>plt.imshow(blurred)</span></code></pre>
 </div>
 <figure><img src="../fig/rectangle-gaussian-blurred.png" alt="Rectangular kernel blurred image" class="figure mx-auto d-block"></figure><p>These unequal sigma values produce a kernel that is rectangular
 instead of square. The result is an image that is much more blurred in
@@ -790,7 +786,7 @@ detail from an image.</li>
   "identifier": "https://preview.carpentries.org/image-processing/instructor/06-blurring.html",
   "dateCreated": "2023-04-25",
   "dateModified": "2023-04-25",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>
